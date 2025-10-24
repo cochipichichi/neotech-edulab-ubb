@@ -1,0 +1,62 @@
+[
+  {
+    "id": "C-0001",
+    "fuente": "CORFO",
+    "instrumento": "Súmate a Innovar",
+    "region": "Ñuble",
+    "estado": "Abierta",
+    "cierra": "2025-11-30",
+    "link": "https://www.corfo.cl/",
+    "resumen": "Vinculación empresa–entidad colaboradora para resolver desafío de productividad/innovación.",
+    "tags": [
+      "innovacion",
+      "educacion",
+      "UBB"
+    ]
+  },
+  {
+    "id": "C-0002",
+    "fuente": "CORFO",
+    "instrumento": "Innova Región",
+    "region": "Ñuble",
+    "estado": "Próxima",
+    "cierra": "2026-06-15",
+    "link": "https://www.corfo.cl/",
+    "resumen": "Validación y pilotaje regional para nuevos productos/servicios.",
+    "tags": [
+      "validacion",
+      "piloto",
+      "Ñuble"
+    ]
+  },
+  {
+    "id": "C-0003",
+    "fuente": "SEREMI Ciencia",
+    "instrumento": "Fomento I+D Escolar",
+    "region": "Biobío",
+    "estado": "Abierta",
+    "cierra": "2025-12-10",
+    "link": "https://www.minciencia.gob.cl/",
+    "resumen": "Proyectos de ciencia escolar con articulación universidad–liceos.",
+    "tags": [
+      "escuelas",
+      "I+D",
+      "inclusion"
+    ]
+  },
+  {
+    "id": "C-0004",
+    "fuente": "CORFO",
+    "instrumento": "Crea y Valida (Colaborativo)",
+    "region": "Nacional",
+    "estado": "Próxima",
+    "cierra": "2026-04-30",
+    "link": "https://www.corfo.cl/",
+    "resumen": "I+D+i con validación técnico-comercial y pilotos.",
+    "tags": [
+      "I+D+i",
+      "validacion",
+      "escalamiento"
+    ]
+  }
+]

@@ -1,0 +1,52 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin</title><meta name="theme-color" content="#0c0f10">
+<link rel="stylesheet" href="../assets/css/style.css"><script defer src="../assets/js/app.js"></script>
+</head><body>
+<header class="header"><nav class="nav"><a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="Logo"><h1>Neotech EduLab <span class="badge">Educación Inmversiva</span></h1></a>
+<span class="spacer"></span><a class="btn ripple" href="onepagers.html">📄 One-pagers</a><a class="btn ripple" href="convocatorias.html">📢 Convocatorias</a><a class="btn ripple" href="legal.html">🔐 Legal</a><a class="btn ripple" href="agenda.html">🗓️ Agenda</a><a class="btn ripple" href="checklist.html">✅ Checklist</a><a class="btn ripple" href="pitch.html">🎤 Pitch</a><a class="btn ripple" href="admin.html">🛠️ Admin</a></nav></header>
+<section class="panel" style="max-width:900px;margin:18px auto">
+  <h2>🛠️ Admin (demo estática)</h2>
+  <p class="small">Demo cliente (sin backend) para editar convocatorias y descargar JSON actualizado.</p>
+  <div id="login">
+    <h3>Acceso</h3>
+    <input id="email" class="input" placeholder="correo (tú o Belén)">
+    <input id="pass" type="password" class="input" placeholder="contraseña">
+    <button class="btn ripple" id="btnLogin">🔓 Ingresar</button>
+  </div>
+  <div id="panel" style="display:none">
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin:10px 0">
+      <input id="fuente" class="input" placeholder="Fuente (CORFO, SEREMI...)">
+      <input id="instrumento" class="input" placeholder="Instrumento">
+      <input id="region" class="input" placeholder="Región">
+      <select id="estado" class="input"><option>Abierta</option><option>Próxima</option><option>Cerrada</option></select>
+      <input id="cierra" type="date" class="input">
+      <input id="link" class="input" placeholder="Enlace">
+      <input id="resumen" class="input" placeholder="Resumen breve">
+      <input id="tags" class="input" placeholder="tags separadas por coma">
+      <button class="btn ripple" id="add">➕ Agregar</button>
+      <button class="btn ripple" id="download">📥 Descargar JSON</button>
+      <button class="btn ripple" id="logout">🚪 Salir</button>
+    </div>
+    <table class="table" id="admTbl"><thead><tr><th>Fuente</th><th>Instrumento</th><th>Región</th><th>Estado</th><th>Cierra</th><th>Acción</th></tr></thead><tbody></tbody></table>
+  </div>
+</section>
+<footer class="footer"><p class="small">© 2025 Neotech EduLab SpA — Educación Inmversiva</p></footer>
+<script>
+const allowedEmails=['franciscoandresp@gmail.com','belen.acpe@gmail.com'];
+const passPlain='MiBelen2025*'; // DEMO SOLO FRONTEND
+let data=[];
+function loadSeed(){fetch('../assets/data/convocatorias.json').then(r=>r.json()).then(j=>{data=JSON.parse(localStorage.getItem('convocatorias'))||j; render();});}
+function render(){const tb=document.querySelector('#admTbl tbody'); tb.innerHTML=''; data.forEach((x,i)=>{const tr=document.createElement('tr');
+tr.innerHTML=`<td>${x.fuente}</td><td>${x.instrumento}</td><td>${x.region}</td><td>${x.estado}</td><td>${x.cierra}</td>
+<td><button data-i="${i}" class="btn ripple del">🗑️</button></td>`; tb.appendChild(tr);});
+document.querySelectorAll('.del').forEach(b=>b.onclick=()=>{data.splice(parseInt(b.dataset.i),1);localStorage.setItem('convocatorias',JSON.stringify(data));render();});}
+document.querySelector('#btnLogin').onclick=()=>{const e=document.querySelector('#email').value.trim().toLowerCase(); const p=document.querySelector('#pass').value;
+if(!allowedEmails.includes(e)||p!==passPlain){alert('Credenciales inválidas');return;} document.querySelector('#login').style.display='none';
+document.querySelector('#panel').style.display='block'; loadSeed();};
+document.querySelector('#add').onclick=()=>{const x={id:'C-'+String(Date.now()).slice(-6),fuente:fuente.value,instrumento:instrumento.value,region:region.value,estado:estado.value,cierra:cierra.value,link:link.value,resumen:resumen.value,tags:tags.value.split(',').map(s=>s.trim()).filter(Boolean)};
+data.push(x); localStorage.setItem('convocatorias',JSON.stringify(data)); render();};
+document.querySelector('#download').onclick=()=>{const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='convocatorias.json'; a.click();};
+document.querySelector('#logout').onclick=()=>{localStorage.removeItem('convocUser'); location.reload();};
+</script>
+</body></html>
