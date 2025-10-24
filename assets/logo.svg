@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#0ea5e9"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="240" rx="24" fill="url(#g)"/>
+  <g fill="white" font-family="Inter, ui-sans-serif, system-ui">
+    <text x="36" y="102" font-size="52" font-weight="800">Neotech EduLab SpA</text>
+    <text x="36" y="146" font-size="22" opacity="0.9">Educación Inmversiva · I+D XR Inclusiva + IoT aplicado</text>
+  </g>
+  <g transform="translate(560,52)" fill="white" opacity="0.92">
+    <circle cx="36" cy="36" r="34" fill="none" stroke="white" stroke-width="4"/>
+    <circle cx="36" cy="36" r="6"/>
+    <path d="M36,10 L36,0 M36,72 L36,82 M10,36 L0,36 M72,36 L82,36" stroke="white" stroke-width="4"/>
+  </g>
+</svg>

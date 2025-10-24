@@ -1,0 +1,20 @@
+{
+  "name": "Neotech EduLab — Educación Inmversiva",
+  "short_name": "Neotech EduLab",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#0c0f10",
+  "theme_color": "#0c0f10",
+  "icons": [
+    {
+      "src": "assets/pwa-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/pwa-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
