@@ -49,4 +49,15 @@ data.push(x); localStorage.setItem('convocatorias',JSON.stringify(data)); render
 document.querySelector('#download').onclick=()=>{const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='convocatorias.json'; a.click();};
 document.querySelector('#logout').onclick=()=>{localStorage.removeItem('convocUser'); location.reload();};
 </script>
+
+  <footer class="footer">
+  <div>📚PEVE - Plataforma Exámenes de Validación de Estudios</div>
+  <div><strong>Neotech EduLab — Educación Inmersiva & I+D SpA</strong></div>
+  <div>Todos los derechos reservados - Prohibida su copia y/o reproduccion</div>
+  <div>🛠️Creado por:</div>
+  <div>👩‍🏫Belén Acuña Pérez — 📧 belen.acpe@gmail.com · 📞 +56 9 6266 4960</div>
+  <div>👨‍💻Francisco Pinto — 📧 franciscoandresp@gmail.com · 📞 +56 9 2002 7992</div>
+  <div>Hecho con ❤️ para el Liceo Bicentenario de Excelencia Polivalente San Nicolás</div>
+ </footer>
+  
 </body></html>
